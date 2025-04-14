@@ -2,15 +2,45 @@
 
 
 
-    <MudItem xs="12" md="4">
-        <p>part 1</p>
-    </MudItem>
+<p>
+    <MudButton OnClick="@GetDate" Color="Color.Secondary" Variant="@Variant.Filled" StartIcon="@Icons.Rounded.Timer3">
+		Get Date
+    </MudButton>
+</p>
 
-    <MudItem xs="12" md="4">
-        <p>part 2</p>
-    </MudItem>
+<p>
+    @currentdate
+</p>
 
-    <MudItem xs="12" md="4">
-        <p>part 3</p>
-    </MudItem>
+<p>
+	<MudIconButton Variant="@Variant.Outlined" Icon="@Icons.Filled.UploadFile" >
 
+    </MudIconButton>
+</p>
+
+<p>
+    <MudToggleIconButton Icon="@Icons.Filled.Pause" 
+                         Title="Waiting..." 
+                         Color="@Color.Error" 
+                         ToggledIcon="@Icons.Filled.PlayArrow" 
+                         ToggledTitle="Running..." 
+                         ToggledColor="@Color.Success" 
+                         @bind-Toggled="@is_running"></MudToggleIconButton>
+</p>
+
+<p>@is_running.ToString()</p>
+
+@code {
+
+    DateTime currentdate = DateTime.Now;
+
+    bool is_running;
+
+    Task GetDate()
+    {
+		currentdate = DateTime.Now;
+		return Task.CompletedTask;
+    }
+
+
+    }
