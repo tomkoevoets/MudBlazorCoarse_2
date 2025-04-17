@@ -1,0 +1,20 @@
+﻿@page "/numberinputexample"
+
+<p>
+	<MudNumericField Max="5" Min="0" @bind-Value="@n1" T="int"></MudNumericField>
+</p>
+<p>@n1</p>
+
+<p>
+	<MudNumericField Step="0.02" AdornmentIcon="@Icons.Rounded.Euro" Adornment="Adornment.End" @bind-Value="@n2" T="double"></MudNumericField>
+</p>
+<p>@n2</p>
+
+
+
+@code {
+
+	int n1;
+	double n2;
+
+}

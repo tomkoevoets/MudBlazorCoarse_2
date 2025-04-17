@@ -1,0 +1,55 @@
+﻿@page "/selectexample"
+
+<p>
+	<MudSelect @bind-Value="selectedValue1" HelperText="value to select" Label="Select Value">
+		<MudSelectItem Value="@("value 1")">displayed value 1</MudSelectItem>
+		<MudSelectItem Value="@("value 2")">displayed value 2</MudSelectItem>
+		<MudSelectItem Value="@("value 3")">displayed value 3</MudSelectItem>
+		<MudSelectItem Value="@("value 4")">displayed value 4</MudSelectItem>
+	</MudSelect>
+</p>
+
+<p> @selectedValue1</p>
+
+<p>
+	<MudSelect @bind-Value="@selectedValue2" T="ItemModel" AdornmentIcon="@Icons.Filled.Search" Adornment="@Adornment.End">
+		@foreach (var item in items)
+		{
+			<MudSelectItem Value="@item">@item.Title</MudSelectItem>
+		}
+	</MudSelect>
+</p>
+<p>@selectedValue2.Id</p>
+
+@code {
+
+	string selectedValue1 = "";
+
+	ItemModel selectedValue2;
+
+
+	List<ItemModel> items = new List<ItemModel>();
+
+
+	class ItemModel
+	{
+		public string Id { get; set; }
+		public string Title { get; set; }
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		for (int i = 0; i <7; i++)
+		{
+			items.Add(new ItemModel()
+				{
+					Id = Guid.NewGuid().ToString(),
+					Title = i.ToString()
+				});
+		}
+		selectedValue2 = items[0];
+
+
+	}
+
+}
