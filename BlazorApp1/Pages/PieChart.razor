@@ -1,0 +1,20 @@
+﻿@page "/piechart"
+
+<MudChart ChartType="ChartType.Pie" SelectedIndexChanged="@(async (args) => NewIndex(args))" InputData="@piedata" InputLabels="@pielabels" Width="300px" Height="300px"></MudChart>
+
+<p>@newindex</p>
+
+@code {
+
+	int newindex;
+
+	double[] piedata = {5.5, 8.5, 7.3 };
+	string[] pielabels = { "label 1", "label 2", "label 3" };
+
+	Task NewIndex(int index)
+	{
+		newindex = index;
+		return Task.CompletedTask;
+	}
+
+}
