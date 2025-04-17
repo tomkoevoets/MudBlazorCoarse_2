@@ -1,0 +1,46 @@
+﻿@page "/newarticle"
+
+<MudItem xs="12" sm="12" md="8" Style="text-align:center; padding:30px">
+	<MudPaper Style="text-align:center; padding:20px">
+		<MudTextField Style="margin-bottom:20px" Variant="Variant.Filled" Label="Title" Placeholder="Insert your title" T="string"></MudTextField>
+
+		<MudTextField Style="margin-bottom:20px" Variant="Variant.Filled" Label="Subtitle" Placeholder="Insert your subtitle" T="string"></MudTextField>
+
+		<MudTextField Style="margin-bottom:20px" Variant="Variant.Filled" Label="Article body" Placeholder="Insert your Article" Lines="15" T="string"></MudTextField>
+
+		<MudButton Size="Size.Medium" Variant="Variant.Filled" Color="Color.Primary">Submit</MudButton>
+		<p style="color:#ff0000">@error</p>
+	</MudPaper>
+
+</MudItem>
+
+<MudItem md="4" Style="padding:20px;">
+
+	<MudCard Style="margin-bottom:20px;">
+		<MudCardContent>
+			<MudText>Category</MudText>
+			<MudSelect T="int" Variant="Variant.Filled">
+				<MudSelectItem Value="@(1)">Technology</MudSelectItem>
+				<MudSelectItem Value="@(2)">Arts</MudSelectItem>
+				<MudSelectItem Value="@(3)">Energy</MudSelectItem>
+			</MudSelect>
+		</MudCardContent>
+	</MudCard>
+
+	<MudCard>
+		<MudCardContent>
+			<MudText>Authors</MudText>
+				<p>
+				<MudTextField Variant="Variant.Filled" T="string"></MudTextField>
+					<MudIconButton Icon="@Icons.Filled.Add" ></MudIconButton>
+				</p>
+		</MudCardContent>
+	</MudCard>
+
+</MudItem>
+
+@code {
+
+	string error;
+
+}

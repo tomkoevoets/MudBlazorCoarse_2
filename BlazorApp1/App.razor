@@ -8,30 +8,19 @@
         </LayoutView>
     </NotFound>
 </Router>
-<MudThemeProvider />
+<MudThemeProvider Theme="@Theme"/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 @code {
-	MudTheme theme = new MudTheme()
-		{
-			LayoutProperties = new LayoutProperties()
-			{
-				// DefaultBorderRadius = "0px",
-				// DefaultBorderWidth = "0px",
-				// DefaultBorderColor = "#000000",
-				// DefaultElevation = 0,
-				// DefaultZIndex = 0,
-			},
-			Palette = new Palette()
-			{
-				Primary = new MudBlazor.Utilities.MudColor(50,68,150,100),
-				Secondary = "#2b88d8",
-				Background = new MudBlazor.Utilities.MudColor(50, 68, 150, 100),
-				TextPrimary = "#000000",
-				TextSecondary = "#000000",
-				AppbarBackground = "#ffffff",
-				AppbarText = "#000000",
-			},
-		};
+
+    MudTheme Theme = new MudTheme()
+        {
+            Palette = new Palette()
+            {
+                Primary = new MudBlazor.Utilities.MudColor(10, 100, 150, 0.9),
+                AppbarBackground = new MudBlazor.Utilities.MudColor(10, 100, 150, 0.59)
+            }
+        };
+
 }

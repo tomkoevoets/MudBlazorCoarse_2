@@ -1,17 +1,8 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<NavMenu></NavMenu>
 
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+<MudGrid Style="max-width:100%; margin-top: 65px;">
+	@Body
+</MudGrid>
 
-        <div class="content px-4">
-            @Body
-        </div>
-    </div>
-</div>
